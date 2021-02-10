@@ -178,6 +178,7 @@ body {
   .pict {
     width: 360px;
     padding: 0;
+    margin: 0;
   }
 
   .pict img {
