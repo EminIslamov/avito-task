@@ -29,20 +29,22 @@ function Modal ({active, setActive}) {
         className={active ? "modal_content active" : "modal_content"}
         onClick={e => e.stopPropagation()}>
         {loading ? <div>Идет загрузка</div> : (
-          <div className="pic-form">
+          <div>
             <div className="pict">
               <img src={pic.url} alt=""/>
             </div>
-            <form>
-              <input type="text" placeholder="Ваше имя" className="name"/>
+            <div className="pic-form">
+              <form>
+                <input type="text" placeholder="Ваше имя" className="name"/>
+                <div>
+                  <input type="text" placeholder="Ваша комментарий" className="comment"/>
+                </div>
+              </form>
               <div>
-                <input type="text" placeholder="Ваша комментарий" className="comment"/>
+                <button className="btn">
+                  Оставить комментарий
+                </button>
               </div>
-            </form>
-            <div>
-              <button className="btn">
-                Оставить комментарий
-              </button>
             </div>
           </div>)}
       </div>

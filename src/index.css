@@ -82,11 +82,13 @@ body {
 
 .pic-form {
   margin-left: 30px;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .pict {
   width: 550px;
+  margin-left: 30px;
+  margin-top: 30px;
 }
 
 .pict img {
@@ -163,14 +165,14 @@ body {
 
   .modal_content.active {
     padding-top: 0px;
-    padding-bottom: 100px;
+    padding-bottom: 120px;
+    max-height: 600px;
   }
 
   .pic-form {
-    margin: auto;
     justify-content: center;
     box-sizing: border-box;
-    padding: 0;
+
   }
 
   .pict {
