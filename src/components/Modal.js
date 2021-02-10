@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { loadPic } from '../redux/actions'
-import { formatTime } from 'redux-logger/src/helpers'
+import Comments from './Comments'
 
 
 
@@ -30,14 +30,19 @@ function Modal ({active, setActive}) {
         onClick={e => e.stopPropagation()}>
         {loading ? <div>Идет загрузка</div> : (
           <div>
-            <div className="pict">
-              <img src={pic.url} alt=""/>
+            <div className="pic-and-comment">
+              <div className="pict">
+                <img src={pic.url} alt=""/>
+              </div>
+              <div className="comment">
+                <Comments />
+              </div>
             </div>
             <div className="pic-form">
               <form>
                 <input type="text" placeholder="Ваше имя" className="name"/>
                 <div>
-                  <input type="text" placeholder="Ваша комментарий" className="comment"/>
+                  <input type="text" placeholder="Ваша комментарий" className="your-comment"/>
                 </div>
               </form>
               <div>
