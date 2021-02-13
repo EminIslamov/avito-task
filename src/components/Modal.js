@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { loadPic } from '../redux/actions'
@@ -20,6 +20,12 @@ function Modal ({active, setActive}) {
     }
   }, [params])
 
+  const [text, setText] = useState(null)
+
+  const handleSetText = (e) => {
+    setText(e.target.value)
+  }
+
 
   return (
     <div
@@ -35,12 +41,18 @@ function Modal ({active, setActive}) {
                 <img src={pic.url} alt=""/>
               </div>
               <div className="comment">
-                <Comments />
+                <Comments  />
               </div>
             </div>
             <div className="pic-form">
               <form>
-                <input type="text" placeholder="Ваше имя" className="name"/>
+                <input
+                  type="text"
+                  placeholder="Ваше имя"
+                  className="name"
+                  value={text}
+                  onChange={handleSetText}
+                />
                 <div>
                   <input type="text" placeholder="Ваша комментарий" className="your-comment"/>
                 </div>

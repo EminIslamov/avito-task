@@ -16,6 +16,17 @@ function Comments (props) {
               <div>
                 {comment[0].text}
               </div>
+              <div>
+                {props.comm === undefined? '' : (
+                    <div>
+                      {props.comm[0] === undefined? '' : (
+                        <div>
+                          {props.comm[0].text}
+                        </div>
+                      )}
+                    </div>
+                )}
+              </div>
             </div>
           )}
         </div>

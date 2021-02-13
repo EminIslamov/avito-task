@@ -29,3 +29,12 @@ export const loadPic = (id) => {
       })
   }
 }
+
+export const addComment = (text) => {
+  return dispatch => {
+    dispatch({
+      type: 'comm/add/success',
+      payload: text
+    })
+  }
+}
