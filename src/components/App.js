@@ -10,9 +10,14 @@ import { Route } from "react-router-dom";
 function App() {
   const dispatch = useDispatch();
 
+
+
+
   useEffect(() => {
     dispatch(loadPhotos());
   });
+
+
 
   const [modalActive, setModalActive] = useState(false);
 
