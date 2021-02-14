@@ -15,7 +15,10 @@ function Modal({ active, setActive }) {
     }
   }, [params]);
 
-  const [text, setText] = useState('');
+  const
+
+
+    [text, setText] = useState('');
 
   const handleSetText = (e) => {
     setText(e.target.value);
