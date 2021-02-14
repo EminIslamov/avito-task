@@ -10,7 +10,7 @@ function Modal({ active, setActive }) {
   const pic = useSelector((state) => state.bigImageReducer.items);
 
   useEffect(() => {
-    if (params !== undefined) {
+    if                (params !== undefined) {
       dispatch(loadPic(params));
     }
   }, [params]);
