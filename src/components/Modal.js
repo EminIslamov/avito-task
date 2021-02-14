@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { loadPic } from '../redux/actions'
-import Comments from './Comments'
+
 
 
 
@@ -13,19 +13,35 @@ function Modal ({active, setActive}) {
   const pic = useSelector(state => state.bigImageReducer.items)
 
 
-
   useEffect(() => {
     if (params !== undefined) {
       dispatch(loadPic(params))
     }
   }, [params])
 
-  const [text, setText] = useState(null)
+  const [text, setText] = useState('')
 
   const handleSetText = (e) => {
     setText(e.target.value)
   }
 
+  const [name, setName] = useState('')
+
+  const handleSetName = (e) => {
+    setName(e.target.value)
+  }
+
+
+  const comment = useSelector(state => state.bigImageReducer.items.comments)
+
+  const [comms, setComms] = useState(comment)
+
+  const handleAddComm = () => {
+    if (comms !== undefined) {
+      setComms([...comms, {text:text}])
+    }
+
+  }
 
   return (
     <div
@@ -41,7 +57,15 @@ function Modal ({active, setActive}) {
                 <img src={pic.url} alt=""/>
               </div>
               <div className="comment">
-                <Comments  />
+                <div>
+                  {comment === undefined ? '' : (
+                    <div>
+                      {comment.map(comm => {
+                        return comm.text
+                      })}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
             <div className="pic-form">
@@ -50,15 +74,23 @@ function Modal ({active, setActive}) {
                   type="text"
                   placeholder="Ваше имя"
                   className="name"
-                  value={text}
-                  onChange={handleSetText}
+                  value={name}
+                  onChange={handleSetName}
                 />
                 <div>
-                  <input type="text" placeholder="Ваша комментарий" className="your-comment"/>
+                  <input
+                    type="text"
+                    placeholder="Ваш комментарий"
+                    className="your-comment"
+                    value={text}
+                    onChange={handleSetText}
+                  />
                 </div>
               </form>
               <div>
-                <button className="btn">
+                <button className="btn"
+                onClick={handleAddComm}
+                >
                   Оставить комментарий
                 </button>
               </div>
