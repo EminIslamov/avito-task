@@ -34,21 +34,18 @@ body {
   border-top: 1px solid gray;
   width: 100%;
   margin: 0 auto;
-
-
 }
 
 .line p {
   font-size: 14px;
   line-height: 16px;
-  color: #CCCCCC;
-
+  color: #cccccc;
 }
 
 .modal {
   height: 100%;
   width: 100%;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
   top: 0;
   left: 0;
@@ -63,7 +60,6 @@ body {
 .modal.active {
   opacity: 1;
   pointer-events: all;
-
 }
 
 .modal_content {
@@ -85,7 +81,6 @@ body {
   margin-top: 30px;
 }
 
-
 .pic-form {
   margin-left: 30px;
   margin-top: 10px;
@@ -100,11 +95,9 @@ body {
   padding-top: 10px;
 }
 
-
 .data {
   color: #999999;
 }
-
 
 .pict img {
   width: 100%;
@@ -130,7 +123,7 @@ body {
 
 .btn {
   width: 550px;
-  background-color:  #4997D0;
+  background-color: #4997d0;
   color: white;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -141,23 +134,22 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-  body{
+  body {
     width: 360px;
   }
 
-  .photos{
+  .photos {
     justify-content: center;
   }
 
-  .footer{
+  .footer {
     width: 300px;
   }
 
-
-  .modal{
+  .modal {
     height: 100%;
     width: 100%;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     position: fixed;
     top: 0;
     left: 0;
@@ -184,7 +176,6 @@ body {
     max-height: 600px;
   }
 
-
   .pic-and-comment {
     display: block;
     margin: 0;
@@ -193,7 +184,6 @@ body {
   .pic-form {
     justify-content: center;
     box-sizing: border-box;
-
   }
 
   .pict {
@@ -209,7 +199,6 @@ body {
   form {
     width: 300px;
     justify-content: center;
-
   }
 
   .name {
@@ -220,12 +209,10 @@ body {
   .your-comment {
     width: 300px;
     box-sizing: border-box;
-
   }
 
   .btn {
     width: 300px;
-
   }
 
   .comment {
@@ -236,5 +223,4 @@ body {
     margin-bottom: 10px;
     margin-top: 10px;
   }
-
 }
