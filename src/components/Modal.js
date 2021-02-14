@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { loadPic } from '../redux/actions';
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { loadPic } from "../redux/actions";
 
 function Modal({ active, setActive }) {
   const dispatch = useDispatch();
@@ -10,21 +10,18 @@ function Modal({ active, setActive }) {
   const pic = useSelector((state) => state.bigImageReducer.items);
 
   useEffect(() => {
-    if                (params !== undefined) {
+    if (params !== undefined) {
       dispatch(loadPic(params));
     }
   }, [params]);
 
-  const
-
-
-    [text, setText] = useState('');
+  const [text, setText] = useState("");
 
   const handleSetText = (e) => {
     setText(e.target.value);
   };
 
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
 
   const handleSetName = (e) => {
     setName(e.target.value);
@@ -42,11 +39,11 @@ function Modal({ active, setActive }) {
 
   return (
     <div
-      className={active ? 'modal active' : 'modal'}
+      className={active ? "modal active" : "modal"}
       onClick={() => setActive(false)}
     >
       <div
-        className={active ? 'modal_content active' : 'modal_content'}
+        className={active ? "modal_content active" : "modal_content"}
         onClick={(e) => e.stopPropagation()}
       >
         {loading ? (
@@ -60,7 +57,7 @@ function Modal({ active, setActive }) {
               <div className="comment">
                 <div>
                   {comment === undefined ? (
-                    ''
+                    ""
                   ) : (
                     <div>
                       {comment.map((comm) => {
@@ -99,6 +96,7 @@ function Modal({ active, setActive }) {
           </div>
         )}
       </div>
+      <div></div>
     </div>
   );
 }
